@@ -1,0 +1,36 @@
+# Introduction to AWS
+
+1. What is Cloud Computing?
+Cloud computing provides services like storage, servers, and databases over the internet, so we can focus on building applications instead of managing physical servers.
+
+2. Why Use Cloud?
+- Scalable resources on-demand
+- Cost-effective: pay only for what you use
+- Global accessibility
+- High availability and reliability
+
+3. Benefits of AWS Cloud
+- Wide range of services (compute, storage, databases, ML, etc.)
+- Security and compliance
+- Flexibility & scalability
+- Pay-as-you-go pricing model
+
+4. Difference Between On-Premises and AWS Cloud
+             On-Premises:                                                                                    
+•	Infrastructure: Managed by you
+•	Scalability: Limited, requires manual scaling
+•	Cost: High upfront costs
+•	Maintenance: Your responsibility
+•	Availability: Depends on your setup
+
+
+             AWS Cloud:
+•	Infrastructure: Managed by AWS
+•	Scalability: Automatic, on-demand
+•	Cost: Pay-as-you-go
+•	Maintenance: AWS handles underlying infrastructure
+•	Availability: High availability built-in
+
+
+
+
