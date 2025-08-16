@@ -1,0 +1,34 @@
+What is EBS?
+Amazon Elastic Block Store (EBS) provides persistent block storage for EC2 instances in AWS. It is like a virtual hard drive that you can attach to your EC2 instance.
+Data stored in EBS volumes persists even after the EC2 instance is stopped or terminated, unless the volume is manually deleted.
+
+Uses of EBS
+•	Persistent Storage: Store data that should survive instance termination.
+•	Databases: Perfect for databases like MySQL, PostgreSQL, or MongoDB.
+•	Boot Volumes: Used as root volumes for EC2 instances.
+•	Backup and Recovery: Take snapshots of volumes for backup.
+
+When to Use EBS in Real Time
+•	When your application needs persistent storage beyond the lifecycle of an EC2 instance.
+•	When you need scalable storage with high availability.
+•	For databases or transactional applications where low-latency access is required.
+•	When you want snapshots to back up critical data.
+
+How to Create an EBS Volume
+1.	Go to the AWS Management Console → EC2 → Volumes.
+2.	Click Create Volume.
+3.	Select Volume Type (General Purpose SSD, Provisioned IOPS, etc.).
+4.	Specify Size (e.g., 20 GB).
+5.	Select the Availability Zone (important note: it must match the EC2 instance’s AZ).
+6.	Click Create Volume.
+
+How to Attach EBS to an EC2 Instance
+1.	Go to EC2 → Volumes, select the volume.
+2.	Click Actions → Attach Volume.
+3.	Select the Instance you want to attach it to.
+4.	Specify a Device Name (e.g., /dev/sdf).
+5.	Click Attach
+
+Important Notes:
+•	EBS volumes can only be attached to EC2 instances in the same Availability Zone.
+•	You cannot attach a volume to an instance in a different region. To use it in another region, you must take a snapshot and create a new volume from the snapshot in the target region.
