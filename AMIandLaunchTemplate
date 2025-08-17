@@ -1,0 +1,70 @@
+Amazon Machine Image (AMI)
+
+What is an AMI?
+
+An Amazon Machine Image (AMI) is a blueprint of an EC2 instance that includes:
+
+Operating System
+
+Configurations
+
+Installed applications and dependencies
+
+
+Why do we use AMIs?
+
+Standardization → Instead of manually configuring each server, we create a reusable AMI with all required dependencies. Every new instance launched from this AMI is identical.
+
+Faster Recovery → If a production server fails, we don’t waste time reinstalling apps. We just launch a new instance from the AMI and it’s ready to go.
+
+Scaling → Auto Scaling Groups use AMIs to ensure every new instance comes up pre-configured and ready to serve traffic.
+
+Compliance & Security → “Golden AMIs” are created with the latest patches and compliance requirements, ensuring all servers meet organizational standards.
+
+How to use AMIs?
+
+Launch a new EC2 instance.
+
+Configure it with OS, software, and settings.
+
+Create an AMI from this instance (via AWS Console or CLI).
+
+Use that AMI to launch new EC2 instances with the same configuration.
+
+
+Launch Template
+
+What is a Launch Template?
+
+An AWS Launch Template is a configuration blueprint that defines how an EC2 instance should be launched.
+It can include details like:
+
+AMI ID
+
+Instance type
+
+Networking (VPC, Subnet, Security Groups)
+
+Storage (EBS volumes)
+
+Key pair, IAM role, tags, etc.
+
+Why do DevOps Engineers use Launch Templates?
+
+Consistency → Ensure all EC2 instances (in Auto Scaling Groups or manually launched) follow the same configuration.
+
+Automation → Useful for Infrastructure-as-Code pipelines where EC2 instances are created automatically.
+
+Version Control → Launch Templates support versions, so changes can be tracked, tested, and rolled back if needed.
+
+Scalability → Simplifies Auto Scaling setups by having all settings pre-defined.
+
+Cost Optimization → Multiple instance types or purchase options (On-demand, Spot) can be defined in the same template for flexibility.
+
+How to use Launch Templates?
+
+In AWS Console, go to EC2 → Launch Templates.
+
+Create a new template with details like AMI, instance type, networking, security groups.
+
+Launch instances directly from this template, or attach it to an Auto Scaling Group.
