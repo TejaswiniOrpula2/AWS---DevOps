@@ -1,0 +1,39 @@
+What is ELB?
+An Elastic Load Balancer (ELB) automatically distributes incoming traffic across multiple EC2 instances, containers, or IPs.
+It ensures high availability, fault tolerance, and scalability by routing requests only to healthy targets.
+
+Why do we use ELB?
+High Availability → Distributes traffic across multiple instances/zones to avoid downtime.
+Scalability → Handles traffic spikes by balancing requests dynamically.
+Fault Tolerance → If one instance fails, traffic is redirected to healthy ones.
+Security → Works with SSL/TLS for encrypted traffic
+
+Real-time Usage?
+Web Applications → Balance user traffic between multiple app servers.
+Microservices → Distribute API calls across containers/services
+Auto Scaling → Automatically routes traffic to new instances added by Auto Scaling Groups.
+Zero-downtime Deployments → Use target group draining for safe rolling updates.
+
+How to Create an ELB (from scratch)?
+Go to EC2 Dashboard → Load Balancers → Create Load Balancer
+Choose the type:
+Application Load Balancer (Layer 7, HTTP/HTTPS)
+Network Load Balancer (Layer 4, TCP/UDP)
+Gateway Load Balancer (used for appliances like firewalls)
+Configure basic settings: Name, scheme (internet-facing/internal), VPC, subnets.
+Add security groups (firewall rules).
+Configure listeners (ports):
+     HTTP → 80
+     HTTPS → 443
+Create a Target Group (EC2 instances/containers/IPs).
+Register targets (instances to receive traffic).
+Review & create → ELB will start routing traffic.
+
+Key Health Check Concepts in ELB?
+Healthy → Instance passed the health check (can receive traffic).
+Unhealthy → Instance failed health checks (no traffic sent).
+Unused → Instance not registered in the target group, so it’s ignored by ELB.
+Draining → Instance is being deregistered; ELB stops sending new traffic but allows in-progress requests to finish (used during deployments).
+Threshold → Number of consecutive successes/failures required before marking an instance as healthy/unhealthy.
+Unhealthy Time Limit → Time taken before ELB decides an instance is unhealthy (depends on health check interval × unhealthy threshold).
+
