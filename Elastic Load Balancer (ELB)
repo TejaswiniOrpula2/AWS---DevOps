@@ -37,3 +37,14 @@ Draining → Instance is being deregistered; ELB stops sending new traffic but a
 Threshold → Number of consecutive successes/failures required before marking an instance as healthy/unhealthy.
 Unhealthy Time Limit → Time taken before ELB decides an instance is unhealthy (depends on health check interval × unhealthy threshold).
 
+
+Elastic Load Balancer (ELB) Types (Refernce)
+
+| **Type**                                   | **Layer**            | **Protocols Supported**      | **Common Ports**                                                 | **Use Cases**                                                                |
+| ------------------------------------------ | -------------------- | ---------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Application Load Balancer (ALB)**        | Layer 7 (HTTP/HTTPS) | HTTP, HTTPS,                 | `80 (HTTP)`, `443 (HTTPS)`                                       | Web apps, APIs, microservices, advanced routing                              |
+| **Network Load Balancer (NLB)**            | Layer 4 (TCP/UDP)    | TCP, UDP, TLS                | Any TCP/UDP port (`25 SMTP`, `53 DNS`, `3306 MySQL`, `1194 VPN`) | High-performance apps, gaming, VoIP, databases                               |
+| **Gateway Load Balancer (GLB)**            | Layer 3 (IP)         | All IP traffic               | No fixed ports (works at IP packet level)                        | Security appliances (firewalls, intrusion detection, deep packet inspection) |
+                                  |
+
+
