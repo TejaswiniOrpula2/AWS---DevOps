@@ -31,4 +31,5 @@ How to Attach EBS to an EC2 Instance
 
 Important Notes:
 •	EBS volumes can only be attached to EC2 instances in the same Availability Zone.
-•	You cannot attach a volume to an instance in a different region. To use it in another region, you must take a snapshot and create a new volume from the snapshot in the target region.
+•	You cannot attach a volume to an instance in a different region. To use it in another region,
+you must take a (Copy) snapshot and create a new volume from the snapshot in the target region.
