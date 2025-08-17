@@ -38,7 +38,7 @@ Threshold → Number of consecutive successes/failures required before marking a
 Unhealthy Time Limit → Time taken before ELB decides an instance is unhealthy (depends on health check interval × unhealthy threshold).
 
 
-Elastic Load Balancer (ELB) Types (Refernce)
+Elastic Load Balancer (ELB) Types (Reference)
 
 | **Type**                                   | **Layer**            | **Protocols Supported**      | **Common Ports**                                                 | **Use Cases**                                                                |
 | ------------------------------------------ | -------------------- | ---------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------------------- |
