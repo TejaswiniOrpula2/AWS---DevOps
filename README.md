@@ -7,6 +7,8 @@ It covers concepts, benefits, differences between on-prem and cloud, and practic
 
 ## Contents
 
-1. [AWS Introduction](01_AWS_Introduction)  
-2. [Elastic Block Store (EBS)](02_EBS)  
-3. More topics coming soon...
+1. AWS Introduction 
+2. Elastic Block Store 
+3. AMI and Launch Template
+4. Elastic Load Balancing
+5. Auto Scaling Group
