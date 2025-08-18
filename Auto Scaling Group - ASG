@@ -1,0 +1,66 @@
+What is Auto Scaling Group (ASG)?
+An Auto Scaling Group (ASG) in AWS ensures applications always have the right number of servers running. Instead of manually adding or removing EC2 instances when traffic changes, the ASG automatically scales the instances up when demand is high (like during peak user activity) and scales them down when demand is low (to save costs).
+In short, ASG helps keep applications highly available, fault-tolerant, and cost-efficient without constant manual monitoring.
+
+Why do we use Auto Scaling Groups?
+To handle increased traffic by adding more instances automatically.
+To save cost by removing unused instances during low traffic.
+To improve availability and fault tolerance (if one instance fails, ASG launches a new one).
+To make applications more scalable, reliable, and cost-effective.
+
+When do we use Auto Scaling Groups?
+Web Applications: When traffic changes during the day or on ocassions (e.g., high traffic in the evening).
+Batch Processing: Scale up only when there’s work to process.
+Critical Systems: Ensure there’s always a minimum number of healthy servers running.
+
+Key Concepts in Auto Scaling Group:
+Minimum Capacity
+The lowest number (Minimum number) of EC2 instances that should always run.
+Ensures your application never goes below a safe baseline.
+Maximum Capacity
+The highest number of EC2 instances the ASG can launch.
+Prevents over-scaling and keeps costs under control.
+Desired Capacity
+The target number of instances you want running.
+ASG tries to keep the running instances equal to this number unless scaling policies change it.
+
+How to Create an Auto Scaling Group in AWS
+Step 1: Create a Launch Template
+Go to EC2 → Launch Templates.
+Click Create Launch Template.
+Provide details:
+AMI (Amazon Machine Image): e.g., Amazon Linux 2.
+Instance Type: e.g., t2.micro.
+Key Pair: for SSH access.
+Security Group: allow required ports (e.g., 22 for SSH, 80 for HTTP).
+Save the template.
+
+Step 2: Create an Auto Scaling Group
+Go to EC2 → Auto Scaling Groups.
+Click Create Auto Scaling Group.
+Select the Launch Template created earlier.
+Define group details:
+Name: e.g., MyApp-ASG.
+VPC & Subnets: select where instances should run.
+
+Step 3: Set Capacity
+Define scaling numbers:
+Minimum capacity: the lowest number of instances that should always run.
+Desired capacity: the normal number of instances you want.
+Maximum capacity: the highest number of instances allowed.
+Example:
+Min = 2, Desired = 3, Max = 6.
+
+Step 4: Configure Load Balancer (Optional but Recommended)
+Attach an Elastic Load Balancer (ELB) to distribute traffic across instances.
+This ensures requests are sent only to healthy instances.
+
+Step 5: Configure Scaling Policies (Optional)
+Add policies to scale based on CloudWatch alarms:
+Example: Add 1 instance if CPU > 70% for 5 minutes.
+Example: Remove 1 instance if CPU < 30% for 5 minutes.
+
+Step 6: Review and Create
+Review all configurations.
+Click Create Auto Scaling Group.
+AWS will automatically launch the initial EC2 instances.
