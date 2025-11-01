@@ -1,0 +1,33 @@
+####Contan##
+
+#str1 = "Hello"
+
+#str2 = "world"
+
+#result = ("hello" + " " + "world")
+
+#print(result)
+
+##Length of the text#
+
+#text = "python is awesome"
+
+#length = len(text)
+
+#print("length of the string:" , length)
+
+
+##uppercase and lowercase##
+
+text = "python is awesome"
+
+
+#uppercase = text.upper( )
+
+#print("uppercase:" , uppercase)
+
+lowercase = text.lower( )
+
+print("lowercase:" , lowercase)
+                                                                1,1 Top
+
